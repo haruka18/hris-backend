@@ -9,4 +9,13 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('health')
+  getHealth() {
+    return {
+      success: true,
+      message: 'HRIS API is running',
+      timestamp: new Date().toISOString(),
+    };
+  }
 }
